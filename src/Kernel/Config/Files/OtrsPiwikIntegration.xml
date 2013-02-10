@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Application">
+    <ConfigItem Name="OtrsPiwikIntegration::Parameters" Required="1" Valid="1">
+        <Description Lang="en">Definition of the Piwik analitics parameters.</Description>
+        <Description Lang="pl">Definicja parametrow dla wykonywania analityki w Piwik.</Description>
+        <Group>OtrsPiwikIntegration</Group>
+        <SubGroup>Core::OtrsPiwikIntegration</SubGroup>
+        <Setting>
+            <Hash>                     
+                <Item Key="Host">localhost/piwik</Item>
+                <Item Key="Id">1234567890</Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
+</otrs_config>

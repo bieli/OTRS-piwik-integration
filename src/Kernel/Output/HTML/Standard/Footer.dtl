@@ -1,0 +1,25 @@
+# --
+# Footer.dtl - provides global HTML footer (with OtrsPiwikIntegration package include)
+# Copyright (C) 2013, http://bieli.net/
+# --
+# $Id: Footer.dtl,v 1.00.0.0 2013/02/08 23:11:21 bieli Exp $
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+
+<div id="Footer" class="ARIARoleContentinfo">
+<!-- dtl:block:Banner -->
+    <a href="http://otrs.org/" target="_blank">$Text{"Powered by"} $Config{"Product"} $Config{"Version"}</a>
+<!-- dtl:block:Banner -->
+    <div class="TopOfPage"><a href="#Top">$Text{"Top of page"}</a></div>
+    <div class="Clear"></div>
+</div>
+
+$Include{"FooterJS"}
+$Include{"FooterPiwikJS"}
+
+</body>
+</html>

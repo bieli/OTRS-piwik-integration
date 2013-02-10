@@ -8,7 +8,7 @@ How to install package in OTRS 3 ?
 ----------------------------------
 
 from console:
-/opt/otrs/$ perl bin/otrs.PackageManager.pl -a install -p ./OTRS-piwik-integration.opm
+/opt/otrs/$ perl /opt/otrs/bin/otrs.PackageManager.pl -a build -p OtrsPiwikIntegration.sopm -d ./
 
 from admin panel:
 http://OTRS-LOCATION/otrs/index.pl?Action=AdminPackageManager
