@@ -1,8 +1,6 @@
 # --
-# FooterJS.dtl - provides Piwik Open Source Analitics HTML footer JavaScript
+# FooterJS.dtl - provides Piwik Open Source Analytics HTML footer JavaScript
 # Copyright (C) 2013, http://bieli.net/
-# --
-# $Id: FooterPiwikJS.dtl,v 1.00.0.0 2013/02/08 21:11:21 bieli Exp $
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -11,14 +9,17 @@
 
 <!-- Piwik -->
 <script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://localhost/piwik/" : "http://localhost/piwik/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1234567890);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://localhost/piwik/piwik.php?idsite=1234567890" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://$Config{"PiwikUrl"}/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', $Config{"PiwikSiteId"}]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
 
+</script>
+<noscript><p><img src="http://$Config{"PiwikUrl"}/piwik.php?idsite=$Config{"PiwikSiteId"}" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Code -->

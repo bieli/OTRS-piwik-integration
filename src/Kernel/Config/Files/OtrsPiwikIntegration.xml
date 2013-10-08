@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Application">
-    <ConfigItem Name="OtrsPiwikIntegration::Parameters" Required="1" Valid="1">
-        <Description Lang="en">Definition of the Piwik analitics parameters.</Description>
-        <Description Lang="pl">Definicja parametrow dla wykonywania analityki w Piwik.</Description>
-        <Group>OtrsPiwikIntegration</Group>
-        <SubGroup>Core::OtrsPiwikIntegration</SubGroup>
-        <Setting>
-            <Hash>                     
-                <Item Key="Host">localhost/piwik</Item>
-                <Item Key="Id">1234567890</Item>
-            </Hash>
-        </Setting>
-    </ConfigItem>
+  <ConfigItem Name="Frontend::Module###OtrsPiwikIntegration" Required="1" Valid="1" ConfigLevel="300">
+      <Description Lang="en">Frontend module for Piwik Open Web Analytics [http://piwik.org/] Integration with OTRS - TRACKING SITE ID.</Description>
+      <Description Lang="pl">Moduł widoku dla otwartych statystyk strony [http://piwik.org/] do integracji z OTRS - ID. SERWISU ŚLEDZONEGO.</Description>
+      <Group>OtrsPiwikIntegration</Group>
+      <SubGroup>Core::PiwikSiteId</SubGroup>
+      <Setting>
+          <String Regex="">1</String>
+      </Setting>
+  </ConfigItem>
+  <ConfigItem Name="Frontend::Module###OtrsPiwikIntegration" Required="1" Valid="1" ConfigLevel="300">
+      <Description Lang="en">Frontend module for Piwik Open Web Analytics [http://piwik.org/] Integration with OTRS - PIWIK INSTANCE URL.</Description>
+      <Description Lang="pl">Moduł widoku dla otwartych statystyk strony  [http://piwik.org/] do integracji z OTRS - ADRES IINSTANCJI PIWIK.</Description>
+      <Group>OtrsPiwikIntegration</Group>
+      <SubGroup>Core::PiwikUrl</SubGroup>
+      <Setting>
+          <String Regex="">localhost/piwik/</String>
+      </Setting>
+  </ConfigItem>
 </otrs_config>
