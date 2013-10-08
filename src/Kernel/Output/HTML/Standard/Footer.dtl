@@ -19,7 +19,9 @@
 </div>
 
 $Include{"FooterJS"}
-$Include{"FooterPiwikJS"}
+
+<dtl if ("$Config{"PiwikEnabled"}" eq "1") { $Include{"FooterPiwikJS"} }>
+
 
 </body>
 </html>

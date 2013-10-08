@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Application">
-  <ConfigItem Name="Frontend::Module###OtrsPiwikIntegration" Required="1" Valid="1" ConfigLevel="300">
-      <Description Lang="en">Frontend module for Piwik Open Web Analytics [http://piwik.org/] Integration with OTRS - TRACKING SITE ID.</Description>
-      <Description Lang="pl">Moduł widoku dla otwartych statystyk strony [http://piwik.org/] do integracji z OTRS - ID. SERWISU ŚLEDZONEGO.</Description>
-      <Group>OtrsPiwikIntegration</Group>
-      <SubGroup>Core::PiwikSiteId</SubGroup>
-      <Setting>
-          <String Regex="">1</String>
-      </Setting>
-  </ConfigItem>
-  <ConfigItem Name="Frontend::Module###OtrsPiwikIntegration" Required="1" Valid="1" ConfigLevel="300">
-      <Description Lang="en">Frontend module for Piwik Open Web Analytics [http://piwik.org/] Integration with OTRS - PIWIK INSTANCE URL.</Description>
-      <Description Lang="pl">Moduł widoku dla otwartych statystyk strony  [http://piwik.org/] do integracji z OTRS - ADRES IINSTANCJI PIWIK.</Description>
-      <Group>OtrsPiwikIntegration</Group>
-      <SubGroup>Core::PiwikUrl</SubGroup>
-      <Setting>
-          <String Regex="">localhost/piwik/</String>
-      </Setting>
-  </ConfigItem>
+    <ConfigItem Name="PiwikEnabled" Required="1" Valid="1" ConfigLevel="200">
+        <Description Translatable="1">Enables/Disables web analytics PIWIK tracing code from OTRS footer.</Description>
+        <Group>OtrsPiwikIntegration</Group>
+        <SubGroup>Settings</SubGroup>
+        <Setting>
+            <Option SelectedID="1">
+                <Item Key="0">No</Item>
+                <Item Key="1">Yes</Item>
+            </Option>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="PiwikUrl" Required="1" Valid="1" ConfigLevel="200">
+        <Description Translatable="1">Defines the PIWIK instance URL.</Description>
+        <Group>OtrsPiwikIntegration</Group>
+        <SubGroup>Settings</SubGroup>
+        <Setting>
+            <String Regex="">localhost/piwik</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="PiwikSiteId" Required="1" Valid="1" ConfigLevel="200">
+        <Description Translatable="1">Defines the site identifier from PIWIK configuration panel.</Description>
+        <Group>OtrsPiwikIntegration</Group>
+        <SubGroup>Settings</SubGroup>
+        <Setting>
+            <String Regex="^[0-9]{1,10}$">1</String>
+        </Setting>
+    </ConfigItem>
 </otrs_config>
