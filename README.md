@@ -16,7 +16,7 @@ How to install PIWIK extension package in OTRS 3 ?
 
 from console:
 ```
-/opt/otrs/$ perl bin/otrs.PackageManager.pl -a install -p ./OTRS-piwik-integration.opm
+/opt/otrs/$ perl bin/otrs.PackageManager.pl -a install -p <BASE_PATH>/OTRS-piwik-integration/otrs-package/OtrsPiwikIntegration-1.0.0.opm
 ```
 
 from admin panel:
